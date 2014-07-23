@@ -1,19 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blog</title>
+  <title>Administration</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<% if session[:user_id] != nil %>
-  Bienvenido ID: <%= session[:user_id] %>. <%= button_to 'Logout', logout_path, method: :delete %>
-<% else %>
-  No estas logueado. <%= link_to 'Login', login_path %>
-<% end %>
-
 
 <%= yield %>
 
