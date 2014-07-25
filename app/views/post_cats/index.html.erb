@@ -1,0 +1,27 @@
+<h1>Listing post_cats</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Post</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @post_cats.each do |post_cat| %>
+      <tr>
+        <td><%= post_cat.post %></td>
+        <td><%= post_cat.category %></td>
+        <td><%= link_to 'Show', post_cat %></td>
+        <td><%= link_to 'Edit', edit_post_cat_path(post_cat) %></td>
+        <td><%= link_to 'Destroy', post_cat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post cat', new_post_cat_path %>

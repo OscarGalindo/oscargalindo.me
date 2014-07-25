@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  resources :post_cats
+
+  resources :categories
+
+  resources :posts
+
   root 'admin/users#index', as: 'user'
 
   get 'admin' => 'admin#index'

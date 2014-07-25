@@ -1,0 +1,2 @@
+module PostCatsHelper
+end

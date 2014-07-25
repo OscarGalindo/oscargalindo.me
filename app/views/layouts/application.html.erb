@@ -8,14 +8,48 @@
 </head>
 <body>
 
-<% if session[:user_id] != nil %>
-  Bienvenido ID: <%= session[:user_id] %>. <%= button_to 'Logout', logout_path, method: :delete %>
-<% else %>
-  No estas logueado. <%= link_to 'Login', login_path %>
-<% end %>
+  <% if session[:user_id] != nil %>
+    Bienvenido ID: <%= session[:user_id] %>. <%= button_to 'Logout', logout_path, method: :delete %>
+  <% else %>
+    No estas logueado. <%= link_to 'Login', login_path %>
+  <% end %>
 
+  <div class="container">
+      <header>
+        <div class="row">
+            <div class="col-xs-11 col-md-offset-1 col-md-9" >
+              <h1><%= link_to 'oscarGalindo', '/' %><br /><small>another developer more</small></h1>
+            </div>
+        </div>
+      </header>
 
-<%= yield %>
+      <div class="row">
+          <div class="col-xs-11  col-md-offset-1 col-sm-3">
+          <ul>
+            <li><%= link_to 'Home', '#' %></li>
+            <li><%= link_to 'Posts', '#' %></li>
+            <li>Categories
+              <ul>
+                <li><%= link_to 'Cat 1', '#' %></li>
+                <li><%= link_to 'Cat 2', '#' %></li>
+              </ul>
+            </li>
+          </ul>
+          </div>
+          <div class="col-xs-11 col-sm-8 col-md-6">
+            <%= yield %>
+          </div>
+      </div>
+
+      <footer>
+        <div class="row">
+            <div class="col-xs-11 col-md-offset-1 col-md-9">
+              <h5>© 2014 - Oscar Galindo</h5>
+            </div>
+        </div>
+      </footer>
+  </div>
+
 
 </body>
 </html>
