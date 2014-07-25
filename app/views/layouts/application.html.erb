@@ -8,10 +8,8 @@
 </head>
 <body>
 
-  <% if session[:user_id] != nil %>
+  <% if session[:user_id] %>
     Bienvenido ID: <%= session[:user_id] %>. <%= button_to 'Logout', logout_path, method: :delete %>
-  <% else %>
-    No estas logueado. <%= link_to 'Login', login_path %>
   <% end %>
 
   <div class="container">

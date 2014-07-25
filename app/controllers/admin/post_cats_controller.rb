@@ -1,4 +1,4 @@
-class PostCatsController < ApplicationController
+class Admin::PostCatsController < Admin::ApplicationController
   before_action :set_post_cat, only: [:show, :edit, :update, :destroy]
 
   # GET /post_cats

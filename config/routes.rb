@@ -1,14 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :post_cats
+  root 'posts#index', as: 'index'
 
-  resources :categories
-
-  resources :posts
-
-  root 'admin/users#index', as: 'user'
-
-  get 'admin' => 'admin#index'
+  get 'admin', to: 'admin#index'
+  get 'post/:id', to: 'posts#post', as: 'post'
 
   controller :sessions do
     get 'login' => :new
@@ -17,6 +12,6 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :users
+    resources :users, :post_cats, :categories, :posts
   end
 end
