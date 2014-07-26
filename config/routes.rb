@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'posts#index', as: 'index'
 
   get 'admin', to: 'admin#index'
-  get 'post/:id', to: 'posts#post', as: 'post'
+  get 'post/:id', to: 'posts#show', as: 'post'
 
   controller :sessions do
     get 'login' => :new

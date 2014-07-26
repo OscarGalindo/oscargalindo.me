@@ -22,20 +22,16 @@
       </header>
 
       <div class="row">
-          <div class="col-xs-11  col-md-offset-1 col-sm-3">
-          <ul>
-            <li><%= link_to 'Home', '#' %></li>
-            <li><%= link_to 'Posts', '#' %></li>
-            <li>Categories
-              <ul>
-                <li><%= link_to 'Cat 1', '#' %></li>
-                <li><%= link_to 'Cat 2', '#' %></li>
-              </ul>
-            </li>
-          </ul>
-          </div>
-          <div class="col-xs-11 col-sm-8 col-md-6">
+          <div class="col-xs-11 col-md-offset-1 col-sm-8 col-md-6">
             <%= yield %>
+          </div>
+          <div class="col-xs-11 col-sm-3">
+            <h4>Recent posts</h4>
+            <ul>
+              <% @recent_posts.each do |post| %>
+                <li><%= link_to post.title, post_path(post.id) %></li>
+              <% end %>
+            </ul>
           </div>
       </div>
 
