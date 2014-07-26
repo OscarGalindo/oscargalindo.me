@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
     def recent_posts
       @recent_posts = Rails.cache.fetch('posts', :expires_in => 10.minutes) do
-        Post.limit(5)
+        Post.limit(5).order(created_at: :desc)
       end
     end
 

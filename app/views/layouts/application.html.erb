@@ -13,42 +13,41 @@
   <% end %>
 
   <div class="container">
-      <header>
-        <div class="row">
-            <div class="col-xs-11 col-md-offset-1 col-md-9" >
-              <h1><%= link_to 'oscarGalindo', '/' %><br /><small>another developer more</small></h1>
-            </div>
-        </div>
-      </header>
-
+    <header>
       <div class="row">
-          <div class="col-xs-11 col-md-offset-1 col-sm-8 col-md-6">
-            <%= yield %>
-          </div>
-          <div class="col-xs-11 col-sm-3">
-            <h4>Recent posts</h4>
-            <ul>
-              <% @recent_posts.each do |post| %>
-                <li><%= link_to post.title, post_path(post.id) %></li>
-              <% end %>
-            </ul>
-            <br />
-            <h4>Categories</h4>
-            <ul>
-              <% @categories.each do |category| %>
-                <li><%= link_to "#{category.name} (#{category.posts.count})", category_path(category.name) %></li>
-              <% end %>
-            </ul>
+        <div class="col-xs-11 col-md-offset-1 col-md-9" >
+          <h1><%= link_to 'oscarGalindo', '/' %><br /><small>another developer more</small></h1>
+        </div>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-xs-11 col-md-offset-1 col-sm-8 col-md-6">
+        <%= yield %>
+      </div>
+      <div class="col-xs-11 col-sm-3">
+        <h4>Recent posts</h4>
+        <ul id="recent">
+          <% @recent_posts.each do |post| %>
+            <li><%= link_to post.title, post_path(post.id) %></li>
+          <% end %>
+        </ul>
+        <h4>Categories</h4>
+        <ul id="categories">
+          <% @categories.each do |category| %>
+            <li><%= link_to "#{category.name} (#{category.posts.count})", category_path(category.name) %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      <div class="row">
+          <div class="col-xs-11 col-md-offset-1 col-md-9">
+            <h5>© 2014 - Oscar Galindo</h5>
           </div>
       </div>
-
-      <footer>
-        <div class="row">
-            <div class="col-xs-11 col-md-offset-1 col-md-9">
-              <h5>© 2014 - Oscar Galindo</h5>
-            </div>
-        </div>
-      </footer>
+    </footer>
   </div>
 
 
