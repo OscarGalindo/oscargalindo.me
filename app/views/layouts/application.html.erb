@@ -32,6 +32,13 @@
                 <li><%= link_to post.title, post_path(post.id) %></li>
               <% end %>
             </ul>
+            <br />
+            <h4>Categories</h4>
+            <ul>
+              <% @categories.each do |category| %>
+                <li><%= link_to "#{category.name} (#{category.posts.count})", category_path(category.name) %></li>
+              <% end %>
+            </ul>
           </div>
       </div>
 
