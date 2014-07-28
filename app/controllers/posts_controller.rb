@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find_by_id(params[:id])
-    render '/post'
+    @posts = Post.find_by_id(params[:id])
+    render '/posts'
   end
 end

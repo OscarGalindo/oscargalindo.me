@@ -1,8 +1,3 @@
 <% @posts.each do |post| %>
-  <div class="post-<%= post.id %>">
-    <h3><%= link_to post.title, post_path(post.id) %></h3>
-    <div>
-      <%= post.content %>
-    </div>
-  </div>
+  <%= render partial: '/post', locals: { post: post }  %>
 <% end %>
